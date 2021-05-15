@@ -12,5 +12,36 @@
 		<property name="studentName" value="Sachin Sah"/>
 		<property name="studentAddress" value="Sachin, Surat"/>
 	</bean>
+	
+	<bean class="com.sachinsah.springcollection.Employee" name="employee">
+		<property name="empId" value="12345"/>
+		<property name="empName" value="Sachin Sah"/>
+		
+		<property name="empPhone">
+			<list>
+				<value>7802008521</value>
+				<value>9687518570</value>
+				<value>8956323120</value>
+			</list>
+		</property>
+		
+		<property name="empAddress">
+			<set>
+				<value>surat</value>
+				<value>Gujarat</value>
+				<value>Siwan</value>
+				<value>Bihar</value>
+			</set>
+		</property>
+		
+		<property name="empAssignTask">
+			<map>
+				<entry key="task 1" value="true"/>
+				<entry key="task 2" value="false"/>
+				<entry key="task 3" value="true"/>
+			</map>
+		</property>
+		
+	</bean>
 
 </beans>
