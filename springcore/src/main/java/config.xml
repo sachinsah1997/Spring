@@ -36,12 +36,18 @@
 		</property>
 		
 	</bean>
+	
+	<bean class="com.sachinsah.springcore.Address" name="address">
+		<constructor-arg value="Surat"/>
+		<constructor-arg value="Gujarat"/>
+		<constructor-arg value="India"/>
+	</bean>
 
  <!-- this is our bean -->          
-	<bean class="com.sachinsah.springcore.Student" name="student1">
+	<bean class="com.sachinsah.springcore.Student" name="student">
 		<property name="studentId" value="123" />
 		<property name="studentName" value="Sachin Sah"/>
-		<property name="studentAddress" value="Sachin, Surat"/>
+		<property name="studentAddress" ref="address"/>
 		
 		<property name="employee" ref="employeeData"></property>
 	</bean>

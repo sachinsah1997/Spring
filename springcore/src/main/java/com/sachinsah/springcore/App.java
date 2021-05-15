@@ -13,10 +13,13 @@ public class App
     public static void main( String[] args )
     {
     	ApplicationContext context =  new ClassPathXmlApplicationContext("config.xml");
-        Student student1 = (Student) context.getBean("student1");
-        Employee employee = (Employee) context.getBean("employeeData");
-    	System.out.println(student1);
-    	System.out.println(student1.getEmployee());
+        
+    	Address address =  (Address) context.getBean("address");
+    	Employee employee = (Employee) context.getBean("employeeData");
+        Student student = (Student) context.getBean("student");
+        
+    	System.out.println(student);
+    	System.out.println(address);
     	System.out.println(employee);
     }
 }

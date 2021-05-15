@@ -6,7 +6,7 @@ public class Student {
 	
 	private int studentId;
 	private String studentName;
-	private String studentAddress;
+	private Address studentAddress;
 	private Employee employee;
 	
 	public Employee getEmployee() {
@@ -27,20 +27,20 @@ public class Student {
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
-	public String getStudentAddress() {
+	
+	public Address getStudentAddress() {
 		return studentAddress;
 	}
-	public void setStudentAddress(String studentAddress) {
+	public void setStudentAddress(Address studentAddress) {
 		this.studentAddress = studentAddress;
 	}
-	
-	
+
 	
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Student(int studentId, String studentName, String studentAddress) {
+	public Student(int studentId, String studentName, Address studentAddress) {
 		super();
 		this.studentId = studentId;
 		this.studentName = studentName;
@@ -49,8 +49,7 @@ public class Student {
 	
 	@Override
 	public String toString() {
-		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", studentAddress=" + studentAddress
-				+ "]";
+		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", studentAddress="+ studentAddress +"]";
 	}
 	
 	
