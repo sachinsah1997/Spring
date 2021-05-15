@@ -6,14 +6,7 @@
 	           http://www.springframework.org/schema/context
 	           http://www.springframework.org/schema/context/spring-context.xsd">
 	 
-	 <!-- this is our bean -->          
-	<bean class="com.sachinsah.springcore.Student" name="student1">
-		<property name="studentId" value="123" />
-		<property name="studentName" value="Sachin Sah"/>
-		<property name="studentAddress" value="Sachin, Surat"/>
-	</bean>
-	
-	<bean class="com.sachinsah.springcollection.Employee" name="employee">
+	<bean class="com.sachinsah.springcollection.Employee" name="employeeData">
 		<property name="empId" value="12345"/>
 		<property name="empName" value="Sachin Sah"/>
 		
@@ -43,5 +36,15 @@
 		</property>
 		
 	</bean>
+
+ <!-- this is our bean -->          
+	<bean class="com.sachinsah.springcore.Student" name="student1">
+		<property name="studentId" value="123" />
+		<property name="studentName" value="Sachin Sah"/>
+		<property name="studentAddress" value="Sachin, Surat"/>
+		
+		<property name="employee" ref="employeeData"></property>
+	</bean>
+	
 
 </beans>
