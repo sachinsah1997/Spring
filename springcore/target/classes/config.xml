@@ -8,15 +8,9 @@
 	 
 	 <!-- this is our bean -->          
 	<bean class="com.sachinsah.springcore.Student" name="student1">
-		<property name="studentId">
-			<value>123</value>
-		</property>
-		<property name="studentName">
-			<value>Sachin Sah</value>
-		</property>
-		<property name="studentAddress">
-			<value>Sachin, Surat</value>
-		</property>
+		<property name="studentId" value="123" />
+		<property name="studentName" value="Sachin Sah"/>
+		<property name="studentAddress" value="Sachin, Surat"/>
 	</bean>
 
 </beans>
