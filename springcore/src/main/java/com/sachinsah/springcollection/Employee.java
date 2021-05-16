@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class Employee {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Employee implements InitializingBean, DisposableBean{
 
 	private int empId;
 	private String empName;
@@ -58,6 +61,14 @@ public class Employee {
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", empPhone=" + empPhone + ", empAddress="
 				+ empAddress + ", empAssignTask=" + empAssignTask + "]";
+	}
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Initializing the bean");
+		
+	}
+	public void destroy() throws Exception {
+		System.out.println("cleaning up before object destroyed");
+		
 	}
 	
 	
