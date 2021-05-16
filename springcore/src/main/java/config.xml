@@ -2,12 +2,21 @@
 <beans xmlns="http://www.springframework.org/schema/beans" 
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
 	           http://www.springframework.org/schema/beans/spring-beans.xsd
 	           http://www.springframework.org/schema/context
-	           http://www.springframework.org/schema/context/spring-context.xsd">
+	           http://www.springframework.org/schema/context/spring-context.xsd
+	           http://www.springframework.org/schema/util
+	           http://www.springframework.org/schema/util/spring-util.xsd ">
 	 
 	 <context:annotation-config />
+	 
+	 <util:list list-class="java.util.LinkedList" id="phonNumberList">
+	 			<value>7802008521</value>
+				<value>9687518570</value>
+				<value>8956323120</value>
+	 </util:list>
 	 
 	 <bean class="com.sachinsah.springcore.Address" name="address">
 		<constructor-arg value="Surat"/>
@@ -19,14 +28,7 @@
 		<property name="empId" value="12345"/>
 		<property name="empName" value="Sachin Sah"/>
 		
-		<property name="empPhone">
-			<list>
-				<value>7802008521</value>
-				<value>9687518570</value>
-				<value>8956323120</value>
-			</list>
-		</property>
-		
+		<property name="empPhone" ref="phonNumberList"/>
 		<property name="empAddress">
 			<set>
 				<value>surat</value>
