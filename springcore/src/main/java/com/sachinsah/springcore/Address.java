@@ -1,5 +1,8 @@
 package com.sachinsah.springcore;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Address {
 
 	private String city;
@@ -17,4 +20,16 @@ public class Address {
 		this.state = state;
 		this.country = country;
 	}
+	
+	@PostConstruct
+	public void init() {
+		System.out.println("Initializing method called");
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("Initializing method called");
+	}
+	
+	
 }
