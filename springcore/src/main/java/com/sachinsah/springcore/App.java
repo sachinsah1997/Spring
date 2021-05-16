@@ -21,6 +21,7 @@ public class App
     	System.out.println(student);
     	System.out.println(address);
     	System.out.println(employee);
+    	System.out.println(employee.getAddress());
     	
     	context.registerShutdownHook();
     }

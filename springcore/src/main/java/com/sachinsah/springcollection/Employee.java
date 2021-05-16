@@ -7,6 +7,8 @@ import java.util.Set;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+import com.sachinsah.springcore.Address;
+
 public class Employee implements InitializingBean, DisposableBean{
 
 	private int empId;
@@ -14,6 +16,14 @@ public class Employee implements InitializingBean, DisposableBean{
 	private List<String> empPhone;
 	private Set<String> empAddress;
 	private Map<String,Boolean> empAssignTask;
+	private Address address;
+	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	public int getEmpId() {
 		return empId;
 	}

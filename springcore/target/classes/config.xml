@@ -9,7 +9,13 @@
 	 
 	 <context:annotation-config />
 	 
-	<bean class="com.sachinsah.springcollection.Employee" name="employeeData">
+	 <bean class="com.sachinsah.springcore.Address" name="address">
+		<constructor-arg value="Surat"/>
+		<constructor-arg value="Gujarat"/>
+		<constructor-arg value="India"/>
+	</bean>
+	 
+	<bean class="com.sachinsah.springcollection.Employee" name="employeeData" autowire="byName">
 		<property name="empId" value="12345"/>
 		<property name="empName" value="Sachin Sah"/>
 		
@@ -40,11 +46,6 @@
 		
 	</bean>
 	
-	<bean class="com.sachinsah.springcore.Address" name="address">
-		<constructor-arg value="Surat"/>
-		<constructor-arg value="Gujarat"/>
-		<constructor-arg value="India"/>
-	</bean>
 
  <!-- this is our bean -->          
 	<bean class="com.sachinsah.springcore.Student" name="student" init-method="init" destroy-method="destroy">
