@@ -6,8 +6,10 @@ import java.util.Set;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sachinsah.springcore.Address;
+import com.sachinsah.springcore.Student;
 
 public class Employee implements InitializingBean, DisposableBean{
 
@@ -18,6 +20,15 @@ public class Employee implements InitializingBean, DisposableBean{
 	private Map<String,Boolean> empAssignTask;
 	private Address address;
 	
+	@Autowired
+	private Student student;
+	
+	public Student getStudent() {
+		return student;
+	}
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 	public Address getAddress() {
 		return address;
 	}
