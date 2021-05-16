@@ -2,7 +2,9 @@ package com.sachinsah.springcore;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Address {
 
 	private String city;

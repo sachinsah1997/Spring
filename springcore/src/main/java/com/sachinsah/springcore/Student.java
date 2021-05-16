@@ -1,7 +1,10 @@
 package com.sachinsah.springcore;
 
+import org.springframework.stereotype.Component;
+
 import com.sachinsah.springcollection.Employee;
 
+@Component
 public class Student {
 	
 	private int studentId;

@@ -7,10 +7,12 @@ import java.util.Set;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.sachinsah.springcore.Address;
 import com.sachinsah.springcore.Student;
 
+@Component
 public class Employee implements InitializingBean, DisposableBean{
 
 	private int empId;
