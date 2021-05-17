@@ -47,7 +47,7 @@ public class Fruit {
 		this.price = price;
 	}
 
-	@Value("#{phonNumberList}")
+	//@Value("#{phonNumberList}")
 	private List<String> types;
 	
 	public List<String> getTypes() {

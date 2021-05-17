@@ -1,8 +1,7 @@
 package com.sachinsah.springcore.sterotype;
 
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.sachinsah.springcollection.Employee;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Hello world!
@@ -12,7 +11,7 @@ public class SteroApp
 {
     public static void main( String[] args )
     {
-    	AbstractApplicationContext context =  new ClassPathXmlApplicationContext("SteroConfig.xml");
+    	ApplicationContext context =  new AnnotationConfigApplicationContext(JavaConfig.class);
         
     	Fruit fruit =  (Fruit) context.getBean("fruit");
         
