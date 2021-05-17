@@ -18,5 +18,8 @@ public class SteroApp
         
     	System.out.println(fruit);
     	System.out.println(fruit.getTypes());
+    	System.out.println(fruit.hashCode());
+    	Fruit fruit2 =  (Fruit) context.getBean("fruit");
+    	System.out.println(fruit2.hashCode());
     }
 }
