@@ -27,5 +27,9 @@ blog/bin/
 **/.tern-project
 .metadata
 
+#Spring
+*apache-tomcat-8.5.61
+*Servers
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
