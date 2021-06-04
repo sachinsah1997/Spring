@@ -1,7 +1,14 @@
 package com.sachinsah.springboot.student;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table	
 public class Student {
 
+	@Id
 	private int studentId;
 	private String studentName;
 	private int age;
