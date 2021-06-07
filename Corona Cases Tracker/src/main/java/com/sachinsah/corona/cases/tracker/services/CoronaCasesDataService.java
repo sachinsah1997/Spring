@@ -24,6 +24,14 @@ public class CoronaCasesDataService {
 	private static String csvLink = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 	private List<CoronaCasesData> allStats = new ArrayList<>();
 	
+	public List<CoronaCasesData> getAllStats() {
+		return allStats;
+	}
+
+	public void setAllStats(List<CoronaCasesData> allStats) {
+		this.allStats = allStats;
+	}
+
 	@PostConstruct
 	@Scheduled(cron = "* * 1 * * *")
 	public void fetchDataFromCsv() throws IOException, InterruptedException {

@@ -10,6 +10,23 @@
   <body>
   
     <p th:text="${param1}"></p>
+    
+  <table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Country</th>
+      <th>Current Cases</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="stat: ${stats}">
+      <td th:text="${stat.state}"/>
+      <td th:text="${stat.country}"/>
+      <td th:text="${stat.currentCases}"/>
+    </tr>
+  </tbody>
+  </table>
   
   </body>
 
