@@ -31,7 +31,64 @@
             </div>
         </div>
   
-    
+  
+  <div class="card">
+  <div class="card-header">
+    This application lists the current number of cases reported across the globe
+  </div>
+  </div>
+  
+  <br><br>
+  <div class="jumbotron">
+  	<h1 class="display-4" th:text="${vaccine}"></h1>
+  	<p class="lead">Total vaccination Done as of now</p>
+  </div>
+  
+  	<br><br>
+	<div class="card text-center">
+  	<div class="card-footer text-muted">
+    	Today
+  	</div>
+	</div>
+  
+  
+  	<div class="row">
+  	<div class="card w-50">
+  	<div class="card-body">
+    	<h1 class="card-title" th:utext="${newCase}"></h1>
+    	<p class="card-text"><h4>New Cases</h4></p>
+    	<a href="#data" class="btn btn-primary">View All data</a>
+  	</div>
+	</div>
+	
+	<div class="card w-50">
+  	<div class="card-body">
+    	<h1 class="card-title" th:utext="${death}"></h1>
+    	<p class="card-text"><h4>Decreased</h4></p>
+    	<a href="#data" class="btn btn-primary">View All data</a>
+  	</div>
+	</div>
+	
+	<div class="card w-50">
+  	<div class="card-body">
+    	<h1 class="card-title" th:utext="${totalDeath}"></h1>
+    	<p class="card-text"><h4>Total Death</h4></p>
+    	<a href="#data" class="btn btn-primary">View All data</a>
+  	</div>
+	</div>
+	
+	<div class="card w-50">
+  	<div class="card-body">
+    	<h1 class="card-title" th:utext="${totalCases}"></h1>
+    	<p class="card-text"><h4>Total Cases</h4></p>
+    	<a href="#data" class="btn btn-primary">View All data</a>
+  	</div>
+	</div>
+	
+	</div>
+ 
+ <br><br>  
+ <section id="data">   
  <table class="table table-hover table-bordered"  style="text-align:left;">
   <thead class="indigo text-white">
     <tr  bgcolor="black" align="center">
@@ -63,7 +120,7 @@
     </tr>
   </tbody>
   </table>
-  
+  </section>
   </body>
 
 </html>

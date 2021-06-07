@@ -16,14 +16,22 @@ public class CoronaCasesController {
 	@GetMapping("/coronatrackerapp")
 	public String controllerMethod(Model model) {
 		
-		double sum=0;
+		double newCase=0,death=0,totalDeath=0,totalCases=0,totalVaccinated=0;
 		for(CoronaCasesData ccd : coronaCasesDataService.getAllStats()) {
-			if(ccd.getNewCases() != "") {
-				sum += Double.parseDouble(ccd.getNewCases());
+			if(ccd.getNewCases() != "" && ccd.getNewDeaths() != "" && ccd.getTotalCases() != "" && ccd.getTotalDeaths() != "" && ccd.getTotalVaccinations() != "") {
+				newCase += Double.parseDouble(ccd.getNewCases());
+				death += Double.parseDouble(ccd.getNewDeaths());
+				totalDeath += Double.parseDouble(ccd.getTotalDeaths());
+				totalCases += Double.parseDouble(ccd.getTotalCases());
+				totalVaccinated += Double.parseDouble(ccd.getTotalVaccinations());
 			}
 		}
 		
-		model.addAttribute("todayCase", sum);
+		model.addAttribute("newCase", newCase);
+		model.addAttribute("death", death);
+		model.addAttribute("totalDeath", totalDeath);
+		model.addAttribute("totalCases", totalCases);
+		model.addAttribute("vaccine", totalVaccinated);
 		model.addAttribute("stats", coronaCasesDataService.getAllStats());
 		return "index";
 	}
