@@ -5,25 +5,64 @@
   <head>
     <title>Corona Cases Tracker</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	 <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <style type="text/css">
+  
+  	 h1 {
+            text-align: center;
+            background-color: black;
+            color: blanchedalmond;
+        }
+  	
+          #logostyle {
+            font-size: 45px;
+            margin-top: 45px;
+            margin-bottom: 50px;
+            padding: 10px;
+        }
+  </style>
+  
   </head>
-
   <body>
   
-    <p th:text="${param1}"></p>
+  <!-- Logo: Search engine -->
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <h1 id="logostyle"><strong> Corona Cases Tracker </strong></h1>
+            </div>
+        </div>
+  
     
-  <table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>Country</th>
-      <th>Current Cases</th> 
+ <table class="table table-hover table-bordered"  style="text-align:left;">
+  <thead class="indigo text-white">
+    <tr  bgcolor="black" align="center">
+      <th>Country_Code</th>
+      <th>Continent</th>
+      <th>Location</th> 
+	  <th>Population</th> 
+	  <th>Last Updated</th> 
+	  <th>New Cases</th> 
+	  <th>New Death</th> 
+	  <th>Total Death</th> 
+	  <th>Total Cases</th> 
+	  <th>Total Vaccinated</th> 
+	  
     </tr>
   </thead>
-  <tbody>
+  <tbody class="table-striped" align="center">
     <tr th:each="stat: ${stats}">
-      <td th:text="${stat.state}"/>
-      <td th:text="${stat.country}"/>
-      <td th:text="${stat.currentCases}"/>
+      <td th:text="${stat.countryCode}"/>
+      <td th:text="${stat.continent}"/>
+      <td th:text="${stat.location}"/>
+      <td th:text="${stat.population}"/>
+      <td th:text="${stat.lastUpdatedDate}"/>
+      <td th:text="${stat.newCases}"/>
+      <td th:text="${stat.newDeaths}"/>
+      <td th:text="${stat.totalDeaths}"/>
+      <td th:text="${stat.totalCases}"/>
+      <td th:text="${stat.totalVaccinations}"/>
     </tr>
   </tbody>
   </table>

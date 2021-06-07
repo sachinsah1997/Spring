@@ -21,7 +21,7 @@ import com.sachinsah.corona.cases.tracker.models.CoronaCasesData;
 @Service
 public class CoronaCasesDataService {
 
-	private static String csvLink = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+	private static String csvLink = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.csv";
 	private List<CoronaCasesData> allStats = new ArrayList<>();
 	
 	public List<CoronaCasesData> getAllStats() {
@@ -46,9 +46,16 @@ public class CoronaCasesDataService {
 		
  		for (CSVRecord record : records) {
 			CoronaCasesData ccd = new CoronaCasesData();
-		    ccd.setState(record.get("Province/State"));
-		    ccd.setCountry(record.get("Country/Region"));
-		    ccd.setCurrentCases(Integer.parseInt(record.get(record.size()-1)));
+			ccd.setCountryCode(record.get("iso_code"));
+			ccd.setContinent(record.get("continent"));
+			ccd.setLocation(record.get("location"));
+			ccd.setPopulation(record.get("population"));
+			ccd.setLastUpdatedDate(record.get("last_updated_date"));
+			ccd.setNewCases(record.get("new_cases"));
+			ccd.setNewDeaths(record.get("new_deaths"));
+			ccd.setTotalDeaths(record.get("total_deaths"));
+			ccd.setTotalCases(record.get("total_cases"));
+			ccd.setTotalVaccinations(record.get("total_vaccinations"));
 		    System.out.println(ccd);
 		    newStats.add(ccd);    
 		}
